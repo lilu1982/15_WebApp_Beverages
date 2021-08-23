@@ -17,12 +17,18 @@ function controller() {
 
 
 // Trigger - Btn 
+const btn = document.getElementById("trigBtn");
+btn.addEventListener("click",actOnClick)
 
 
 // Trigger - Input
 
 
 // Event-Dispatcher
+function actOnClick() {
+    controller();
+    
+}
 
 
 
