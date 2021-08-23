@@ -10,7 +10,10 @@
 */
 
 // Modul Ablaufsteuerung | Test:
-//controller()
+controller()
+function controller() {
+    ausgabe(updateImg(checkAge()));
+}
 
 
 
@@ -30,6 +33,11 @@
 
 
 //Modul: Business-Logic (Mapping) | Test:
+// ausgabe(checkAge());
+function checkAge() {
+    return "cola";
+}
+
 
 
 // Modul: Bild aktualisieren | Test:
