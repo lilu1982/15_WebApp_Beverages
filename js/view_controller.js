@@ -1,10 +1,10 @@
 /* View- Controller */
 
 /* Der Plan
-    Einlesen Daten von Webseite :: toDo
+    Einlesen Daten von Webseite :: check!
 	Check Daten :: toDo
     Btn. Trigger :: toDo
-    Business-Logic (Alter --> Getränk) :: check
+    Business-Logic (Alter --> Getränk) :: check!
     Bild austauschen :: check!
 */
 
