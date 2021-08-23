@@ -7,10 +7,8 @@
                 cola:{lower:13, upper:20, bev:"cola"},
                 wine:{lower:21, upper:130, bev:"wein"},
                 default:{bev:"tee"}
-                }
-    
-    
-    
+                }  
+        
     let gui =   {
                     img:{path:"./bilder/", ext:".jpg"}
                 }

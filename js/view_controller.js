@@ -32,7 +32,9 @@ function controller() {
 // Modul: Eingabe | Test:
 //ausgabe(getInput())
 function getInput() {
-    return 2;
+    const inputField = document.getElementsByName("eingabe")[0];
+    let age = parseInt(inputField.value);
+    return age;
     
 }
 
@@ -47,14 +49,14 @@ function getInput() {
 function checkAge(age) {
     switch (true) 
     {
-        case (age >= 0) && (age <= 5):
-            return "milch";
-        case (age >= 6) && (age <= 12):
-            return "saft";
-        case (age >= 13) && (age <= 17):
-            return "cola";
-        case (age >= 18) && (age <= 130):
-            return "wein";
+        case (age >= data.milk.lower) && (age <= data.milk.upper):
+            return data.milk.bev;
+        case (age >= data.juice.lower) && (age <= data.juice.upper):
+            return data.juice.bev;
+        case (age >= data.cola.lower) && (age <= data.cola.upper):
+            return data.cola.bev;
+        case (age >= data.wine.lower) && (age <= data.wine.upper):
+            return data.wine.bev;
         default:
             return "tee";
     }
