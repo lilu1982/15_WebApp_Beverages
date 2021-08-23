@@ -1,49 +1,58 @@
+
+
 /* View- Controller */
 
 /* Der Plan
     Einlesen Daten von Webseite :: check!
-	Check Daten :: toDo
-    Btn. Trigger :: toDo
+	Check Daten :: check!
+    Btn. Trigger :: check!
     Business-Logic (Alter --> Getränk) :: check!
     Bild austauschen :: check!
 */
 
 // Modul Ablaufsteuerung | Test:
-//  controller()
+// controller();
 function controller() {
     ausgabe(updateImg(checkAge(getInput())));
 }
 
-
-
-// Trigger - Btn 
+// Trigger - BtnClick 
 const btn = document.getElementById("trigBtn");
 btn.addEventListener("click",actOnClick)
 
-
 // Trigger - Input
-
+const field  = document.getElementsByName("eingabe")[0];
+field.addEventListener("input",isInputValid);
 
 // Event-Dispatcher
 function actOnClick() {
-    controller();
-    
+    if (isInputValid()) {
+        controller();
+    } else {
+        ausgabe("Input nicht korrekt!")
+    }
 }
-
-
 
 // Modul: Check auf korrekte Eingaben ...
+function isInputValid() {
 
+    let inputStr = field.value;
+    let patt = /^[0-9]{1,3}$/g;   // 0 - 999
+    let cond = patt.test(inputStr);
+   
+    if (!cond) {  // Fehlerbehandlung
+        field.value = "";
+        updateImg(data.default.bev);
+    }
 
-// Modul: Eingabe | Test:
-//ausgabe(getInput())
-function getInput() {
-    const inputField = document.getElementsByName("eingabe")[0];
-    let age = parseInt(inputField.value);
-    return age;
-    
+    return cond;
 }
 
+// Modul: Eingabe | Test:
+// ausgabe(getInput());
+function getInput() {
+    return parseInt(field.value);
+}
 
 //Modul: Business-Logic (Mapping) | Test:
 // ausgabe(checkAge(2));
@@ -64,12 +73,12 @@ function checkAge(age) {
         case (age >= data.wine.lower) && (age <= data.wine.upper):
             return data.wine.bev;
         default:
-            return "tee";
+        return data.default.bev;
     }
 }
 
 // Modul: Bild aktualisieren | Test:
-// ausgabe(updateImg("cola"));
+//ausgabe(updateImg("cola"));
 //ausgabe(updateImg("milch"));
 function updateImg(imgName) {
     let img = document.getElementById("bevImg");
